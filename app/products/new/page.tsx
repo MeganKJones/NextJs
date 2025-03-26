@@ -62,7 +62,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <span className="label">Product Type</span>
           <select name='product_type' value={form.product_type} className="select select-ghost" required onChange={handleChange}>
             <option disabled={true} value="">Product Type</option>
-            {[...new Set(productTypes.map(p => p.name))].map((type, index) => (
+            {[...new Set(productTypes.map(p => p.name))].sort((a, b) => a.localeCompare(b)).map((type, index) => (
             <option key={index} value={type}>
             {type}
             </option>
@@ -81,9 +81,11 @@ const handleSubmit = async (e: React.FormEvent) => {
           <span className="label">Collection</span>
           <select name='collection' value={form.collection} className="select select-ghost" required onChange={handleChange}>
             <option disabled={true} value="">Product collection</option>
-            {collections.map(product =>
+            {[...collections]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map(product => (
               <option key={product.id}>{product.name}</option>
-          )}
+            ))}
           </select>
         </label>
 

@@ -43,5 +43,20 @@
     "id": 9,
     "name": "Shower cream",
     "desc": "Creamy, dreamy lather for soft, nourished skin in every shower."
+  },
+  {
+    "id": 10,
+    "name": "Body Balm",
+    "desc": "Nourishing balm to hydrate and soften your skin all day."
+  },
+  {
+    "id": 11,
+    "name": "Shower Jelly",
+    "desc": "Wobbly, sudsy fun that cleanses and refreshes in the shower!"
+  },
+  {
+    "id": 12,
+    "name": "Body Spray",
+    "desc": "A refreshing spritz to scent your body anytime, anywhere."
   }
 ]

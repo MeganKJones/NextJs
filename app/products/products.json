@@ -259,5 +259,32 @@
     "price": "9.00",
     "collection": "AYR",
     "image": "posh-chocolate.png"
+  },
+  {
+    "id": 30,
+    "name": "Bitzer",
+    "product_type": "Body Balm",
+    "size": "90g",
+    "price": "10.00",
+    "collection": "Shaun the sheep 2025",
+    "image": "bitzer.png"
+  },
+  {
+    "id": 31,
+    "name": "The Naughty Pigs",
+    "product_type": "Shower Jelly",
+    "size": "155g",
+    "price": "12.00",
+    "collection": "Shaun the sheep 2025",
+    "image": "the-naughty-pigs.png"
+  },
+  {
+    "id": 32,
+    "name": "Mossy Bottom",
+    "product_type": "Body Spray",
+    "size": "200ml",
+    "price": "35.00",
+    "collection": "Shaun the sheep 2025",
+    "image": "mossy-bottom.png"
   }
 ]
