@@ -1,9 +1,8 @@
 import React from 'react'
 import products from "./products.json"
-import styles from './Page.module.css'
 import NavBar from '../components/NavBar'
 import Link from 'next/link'
-import slugify from '../lib/slugify'
+import Slug from '../lib/slugify'
 
 
 const ProductsPage = async () => {
@@ -37,12 +36,12 @@ const ProductsPage = async () => {
           {/* row 1 */}
           {products.slice().sort((a, b) => a.name.localeCompare(b.name)).map(product =>
           <tr className="bg-base-200">
-            <th><Link href={`/products/${slugify(product.name)}`}><img src={product.image}></img></Link></th>
-            <td><Link href={`/products/${slugify(product.name)}`}>{product.name}</Link></td>
-            <td><Link href={`/products/${slugify(product.name)}`}>{product.product_type}</Link></td>
-            <td><Link href={`/products/${slugify(product.name)}`}>{product.size}</Link></td>
-            <td><Link href={`/products/${slugify(product.name)}`}>£{product.price}</Link></td>
-            <td><Link href={`/products/${slugify(product.name)}`}>{product.collection}</Link></td>
+            <th><Link href={`/products/${Slug.slugify(product.name)}`}><img src={product.image}></img></Link></th>
+            <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.name}</Link></td>
+            <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.product_type}</Link></td>
+            <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.size}</Link></td>
+            <td><Link href={`/products/${Slug.slugify(product.name)}`}>£{product.price}</Link></td>
+            <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.collection}</Link></td>
           </tr>
 
           )}

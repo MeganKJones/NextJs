@@ -2,6 +2,7 @@ import { IncomingForm } from 'formidable'
 import fs from 'fs/promises'
 import path from 'path'
 import { NextApiRequest, NextApiResponse } from 'next'
+import Slug from '@/app/lib/slugify'
 
 // Disable the default body parser — required for formidable
 export const config = {
@@ -42,6 +43,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const oldProduct = products[productIndex]
+    let newImageName = oldProduct.image
+
+    const imageFile = files.image?.[0]
+    const name = fields.name?.[0] || oldProduct.name
+
+    if (imageFile) {
+      const ext = path.extname(imageFile.originalFilename || '')
+      const slug = Slug.slugify(name)
+      newImageName = `${slug}${ext}`
+      const destPath = path.join(uploadsDir, newImageName)
+
+      // Rename the uploaded file
+      await fs.rename(imageFile.filepath, destPath)
+    }
 
     const updatedProduct = {
       ...oldProduct,
@@ -50,9 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       size: fields.size?.[0] || oldProduct.size,
       price: fields.price?.[0] || oldProduct.price,
       collection: fields.collection?.[0] || oldProduct.collection,
-      image: (files.image?.[0] && files.image[0].originalFilename)
-      ? `${path.basename(files.image[0].filepath)}`
-      : oldProduct.image
+      image: imageFile ? newImageName : oldProduct.image
     }
 
     products[productIndex] = updatedProduct

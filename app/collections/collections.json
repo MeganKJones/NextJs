@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Shaun the sheep",
+    "desc": "Baa-rilliant bath treats from the world of Shaun the Sheep!"
+  },
+  {
+    "id": 2,
+    "name": "AYR",
+    "desc": "Indulge in pure bliss with our luxurious bath collection, crafted for ultimate pampering."
+  },
+  {
+    "id": 3,
+    "name": "Minecraft",
+    "desc": "Blocky bath bombs for pixel-perfect pampering—crafted for Minecraft fans! \n"
+  },
+  {
+    "id": 4,
+    "name": "Mothers day 2025",
+    "desc": "Treat mum to a spa day—sweet, soothing scents made with love for Mother's Day."
+  },
+  {
+    "id": 5,
+    "name": "St Patricks day 2025",
+    "desc": "Get lucky with our St. Patrick’s Day bath treats—fresh, festive, and full of charm!"
+  },
+  {
+    "id": 6,
+    "name": "Easter 2025",
+    "desc": "Hop into spring with egg-citing Easter bath treats, bursting with sweet, seasonal scents!"
+  },
+  {
+    "id": 7,
+    "name": "Fathers day 2025",
+    "desc": "Treat Dad to a splash of relaxation this Father’s Day!"
+  },
+  {
+    "id": 8,
+    "name": "Christmas 2025",
+    "desc": "Festive fizz and cozy scents to make your bath merry and bright!"
+  }
+]

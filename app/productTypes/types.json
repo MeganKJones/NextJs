@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Bath bomb",
+    "desc": "Drop in water for fizzy, fragrant bath-time bliss."
+  },
+  {
+    "id": 2,
+    "name": "Bubble bar",
+    "desc": "Crumble under running water for clouds of bubbles."
+  },
+  {
+    "id": 3,
+    "name": "Shower gel",
+    "desc": "Lathers up in the shower to cleanse, soften, and scent your skin."
+  },
+  {
+    "id": 4,
+    "name": "Shampoo",
+    "desc": "Cleanses your hair and scalp for fresh, healthy locks."
+  },
+  {
+    "id": 5,
+    "name": "Conditioner",
+    "desc": "Softens and nourishes hair for a silky, manageable finish."
+  },
+  {
+    "id": 6,
+    "name": "Perfume",
+    "desc": "A long-lasting scent to refresh and express your style."
+  },
+  {
+    "id": 7,
+    "name": "Soap",
+    "desc": "Scrub-a-dub with this bar—just add water and wash up with joy!"
+  },
+  {
+    "id": 8,
+    "name": "Shampoo bar",
+    "desc": "Lather up with this solid shampoo bar for fresh, clean, healthy hair."
+  }
+]

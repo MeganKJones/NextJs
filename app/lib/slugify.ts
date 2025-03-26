@@ -5,4 +5,13 @@ const slugify = (str: string) =>
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9\-]/g, '')
 
-export default slugify
+const unslugify = (slug: string) => {
+  const spaces = slug.replaceAll("-", " ")
+  const capitalized = spaces.charAt(0).toUpperCase() + spaces.slice(1)
+  return capitalized
+}
+
+export default {
+  slugify,
+  unslugify
+}

@@ -5,6 +5,7 @@ import NavBar from "@/app/components/NavBar";
 import Link from "next/link";
 import { useState } from "react";
 import { useEffect } from 'react'
+import collections from './../../collections/collections.json'
 
 interface Props {
   params: {
@@ -135,8 +136,8 @@ interface Props {
             <p>£{product.price}</p>
             <p>{product.collection}</p>
             <div className="card-actions justify-end">
-              <button className="btn bg-rose-500 text-stone-950" onClick={()=>document.getElementById('my_modal_1').showModal()}>Delete</button>
-              <dialog id="my_modal_1" className="modal">
+              <button className="btn bg-rose-500 text-stone-950" onClick={()=>(document.getElementById('deleteModal')as HTMLDialogElement)?.showModal()}>Delete</button>
+              <dialog id="deleteModal" className="modal">
                 <div className="modal-box">
                   <h3 className="font-bold text-lg">Are you sure?</h3>
                   <p className="py-4">This action cannot be undone. Click </p>
@@ -231,8 +232,8 @@ interface Props {
                     required
                   >
                     <option disabled={true}>Product collection</option>
-                    {products.map((product) => (
-                      <option key={product.id}>{product.collection}</option>
+                    {collections.map((product) => (
+                      <option key={product.id}>{product.name}</option>
                     ))}
                   </select>
                   {/* image */}

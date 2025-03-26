@@ -2,6 +2,8 @@
 import React, {useState} from 'react'
 import NavBar from '@/app/components/NavBar'
 import products from "./../products.json"
+import collections from './../../collections/collections.json'
+import productTypes from './../../productTypes/types.json'
 import Link from 'next/link'
 
 const NewProductPage = () => {
@@ -42,6 +44,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   if (res.ok) {
     alert('Product added!')
+    window.location.href = "/products"
   } else {
     alert('Something went wrong.')
   }
@@ -66,9 +69,9 @@ const handleSubmit = async (e: React.FormEvent) => {
         </label>
         <label className="input">
           <span className="label">Product Type</span>
-          <select name='product_type' defaultValue="" className="select select-ghost" required onChange={handleChange}>
-            <option disabled={true}>Product Type</option>
-            {[...new Set(products.map(p => p.product_type))].map((type, index) => (
+          <select name='product_type' value={form.product_type} className="select select-ghost" required onChange={handleChange}>
+            <option disabled={true} value="">Product Type</option>
+            {[...new Set(productTypes.map(p => p.name))].map((type, index) => (
             <option key={index} value={type}>
             {type}
             </option>
@@ -85,10 +88,10 @@ const handleSubmit = async (e: React.FormEvent) => {
         </label>
         <label className="input">
           <span className="label">Collection</span>
-          <select name='collection' defaultValue="" className="select select-ghost" required onChange={handleChange}>
-            <option disabled={true}>Product collection</option>
-            {products.map(product =>
-              <option key={product.id}>{product.collection}</option>
+          <select name='collection' value={form.collection} className="select select-ghost" required onChange={handleChange}>
+            <option disabled={true} value="">Product collection</option>
+            {collections.map(product =>
+              <option key={product.id}>{product.name}</option>
           )}
           </select>
         </label>
