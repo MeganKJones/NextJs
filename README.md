@@ -1,34 +1,34 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+It also utilises Tailwind and DaisyUI.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
 ## Getting Started
 
-First, run the development server:
+To run the development server:
 
 ```bash
+ncd next-app
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Layout
+The app contains collections, products and product types. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For each catagory, users can add, edit and delete items in order to continue expanding the LUSH catalogue.
 
-## Learn More
+### Collections
+This is used in conjunction with products in order to help catagorise groups of products that were either released at the same time, or share a common theme. e.g. christmas. The list of collections are contained within collections.json and any new collections added via the app are also added to collections.json.
 
-To learn more about Next.js, take a look at the following resources:
+### Products
+This is the where the products that LUSH produces/previously produced are compiled. It details the name, product type, weight, price and collection of each product, alongside an image of the product.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Product Types
+This is also used in conjunction with products in order to help catagorise the types of products that LUSH produces/previously produced. e.g. Shower gel. The list of product types are contained within types.json and any new product types added via the app are also added to types.json.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Search
+On the Nav Bar there is a search box where a user can search for a product name, collection name or product type to more easily find the product they are looking for. 
