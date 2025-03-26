@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Shaun the sheep",
+    "name": "Shaun the sheep 2025",
     "desc": "Baa-rilliant bath treats from the world of Shaun the Sheep!"
   },
   {
@@ -38,5 +38,10 @@
     "id": 8,
     "name": "Christmas 2025",
     "desc": "Festive fizz and cozy scents to make your bath merry and bright!"
+  },
+  {
+    "id": 9,
+    "name": "Minions 2024",
+    "desc": "Banana-scented bath fun with your favorite Minions! Bubbly chaos awaits!"
   }
 ]

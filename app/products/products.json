@@ -5,7 +5,7 @@
     "product_type": "Bath bomb",
     "price": 6,
     "size": "135g",
-    "collection": "Shaun the sheep",
+    "collection": "Shaun the sheep 2025",
     "image": "shaun-the-sheep.png"
   },
   {
@@ -158,7 +158,7 @@
     "product_type": "Bubble bar",
     "size": "100g",
     "price": "7.00",
-    "collection": "",
+    "collection": "Shaun the sheep 2025",
     "image": "sleepy-timmy.png"
   },
   {
@@ -187,5 +187,77 @@
     "price": "10.00",
     "collection": "AYR",
     "image": "seanik.png"
+  },
+  {
+    "id": 22,
+    "name": "Valkyrie",
+    "product_type": "Conditioner",
+    "size": "100g",
+    "price": "11.00",
+    "collection": "AYR",
+    "image": "valkyrie.png"
+  },
+  {
+    "id": 23,
+    "name": "Bananaaaa",
+    "product_type": "Shower cream",
+    "size": "120g",
+    "price": "9.00",
+    "collection": "Minions 2024",
+    "image": "bananaaaa.png"
+  },
+  {
+    "id": 24,
+    "name": "Daddy-o",
+    "product_type": "Shampoo",
+    "size": "100g",
+    "price": "9.00",
+    "collection": "AYR",
+    "image": "daddy-o.png"
+  },
+  {
+    "id": 25,
+    "name": "Daddy-o",
+    "product_type": "Shampoo",
+    "size": "250g",
+    "price": "18.00",
+    "collection": "AYR",
+    "image": "daddy-o.png"
+  },
+  {
+    "id": 26,
+    "name": "Daddy-o",
+    "product_type": "Shampoo",
+    "size": "500g",
+    "price": "29.00",
+    "collection": "AYR",
+    "image": "daddy-o.png"
+  },
+  {
+    "id": 27,
+    "name": "Daddy-o",
+    "product_type": "Shampoo",
+    "size": "1kg",
+    "price": "46.00",
+    "collection": "AYR",
+    "image": "daddy-o.png"
+  },
+  {
+    "id": 28,
+    "name": "Troublesome tractor",
+    "product_type": "Soap",
+    "size": "100g",
+    "price": "7.00",
+    "collection": "Shaun the sheep 2025",
+    "image": "troublesome-tractor.png"
+  },
+  {
+    "id": 29,
+    "name": "Posh chocolate",
+    "product_type": "Shower gel",
+    "size": "110g",
+    "price": "9.00",
+    "collection": "AYR",
+    "image": "posh-chocolate.png"
   }
 ]

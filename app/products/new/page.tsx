@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react'
 import NavBar from '@/app/components/NavBar'
-import products from "./../products.json"
 import collections from './../../collections/collections.json'
 import productTypes from './../../productTypes/types.json'
 import Link from 'next/link'

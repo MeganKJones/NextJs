@@ -38,5 +38,10 @@
     "id": 8,
     "name": "Shampoo bar",
     "desc": "Lather up with this solid shampoo bar for fresh, clean, healthy hair."
+  },
+  {
+    "id": 9,
+    "name": "Shower cream",
+    "desc": "Creamy, dreamy lather for soft, nourished skin in every shower."
   }
 ]

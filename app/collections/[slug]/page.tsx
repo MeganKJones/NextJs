@@ -85,12 +85,12 @@ export const CollectionView = ({params}: Props) => {
           <tbody>
             {collectionProducts.map(product => (
               <tr key={product.id} className="bg-base-200">
-                <td><img src={`/${product.image}`} alt={product.name} /></td>
-                <td>{product.name}</td>
-                <td>{product.product_type}</td>
-                <td>{product.size}</td>
-                <td>£{product.price}</td>
-                <td>{product.collection}</td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}><img src={`/${product.image}`} ></img></Link></td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.name}</Link></td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.product_type}</Link></td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.size}</Link></td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}>£{product.price}</Link></td>
+              <td><Link href={`/products/${Slug.slugify(product.name)}`}>{product.collection}</Link></td>
               </tr>
             ))}
           </tbody>

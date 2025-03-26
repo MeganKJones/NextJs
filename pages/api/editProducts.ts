@@ -3,6 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Slug from '@/app/lib/slugify'
+import Constants from '@/app/lib/constants'
 
 // Disable the default body parser — required for formidable
 export const config = {
@@ -12,7 +13,6 @@ export const config = {
 }
 
 const uploadsDir = path.join(process.cwd(), 'public', '')
-const productsJsonPath = path.join(process.cwd(), 'app', '/products/products.json')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'PUT') {
@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!id) return res.status(400).json({error: "Missing product ID"})
 
     try {
-      const fileContent = await fs.readFile(productsJsonPath, 'utf8')
+      const fileContent = await fs.readFile(Constants.productsJsonPath, 'utf8')
       const products = JSON.parse(fileContent)
 
       const productIndex = products.findIndex((p: any) => p.id === id)
@@ -69,7 +69,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     products[productIndex] = updatedProduct
-    await fs.writeFile(productsJsonPath, JSON.stringify(products, null, 2))
+    await fs.writeFile(Constants.productsJsonPath, JSON.stringify(products, null, 2))
 
     return res.status(200).json({ success: true, product: updatedProduct })
 

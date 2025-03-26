@@ -1,8 +1,6 @@
 import fs from 'fs/promises'
-import path from 'path'
 import { NextApiRequest, NextApiResponse } from 'next'
-
-const TypesJsonPath = path.join(process.cwd(), 'app', '/productTypes/types.json')
+import Constants from '@/app/lib/constants'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'DELETE') {
@@ -16,11 +14,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       console.log("ID: ", id)
   
-      const fileContent = await fs.readFile(TypesJsonPath, 'utf8');
+      const fileContent = await fs.readFile(Constants.typesJsonPath, 'utf8');
       const types = JSON.parse(fileContent);
   
       const newType = types.filter((p: any) => p.id !== id);
-      await fs.writeFile(TypesJsonPath, JSON.stringify(newType, null, 2));
+      await fs.writeFile(Constants.typesJsonPath, JSON.stringify(newType, null, 2));
   
       return res.status(200).json({ success: true });
     } catch (err) {

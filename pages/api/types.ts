@@ -1,8 +1,6 @@
 import fs from 'fs/promises'
-import path from 'path'
 import { NextApiRequest, NextApiResponse } from 'next'
-
-const typesJsonPath = path.join(process.cwd(), 'app', '/productTypes/types.json')
+import Constants from '@/app/lib/constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -17,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     
-    const fileContent = await fs.readFile(typesJsonPath, 'utf8')
+    const fileContent = await fs.readFile(Constants.typesJsonPath, 'utf8')
     const types = JSON.parse(fileContent)
 
     const lastType = types[types.length - 1]
@@ -26,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const newCollection = { id: newId, name, desc };
 
     types.push(newCollection)
-    await fs.writeFile(typesJsonPath, JSON.stringify(types, null, 2))
+    await fs.writeFile(Constants.typesJsonPath, JSON.stringify(types, null, 2))
 
     return res.status(200).json({ success: true, type: types })
     

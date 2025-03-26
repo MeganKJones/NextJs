@@ -1,8 +1,7 @@
 import fs from 'fs/promises'
-import path from 'path'
 import { NextApiRequest, NextApiResponse } from 'next'
+import Constants from '@/app/lib/constants'
 
-const collectionsJsonPath = path.join(process.cwd(), 'app', '/collections/collections.json')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'DELETE') {
@@ -16,11 +15,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       console.log("ID: ", id)
   
-      const fileContent = await fs.readFile(collectionsJsonPath, 'utf8');
+      const fileContent = await fs.readFile(Constants.collectionsJsonPath, 'utf8');
       const collection = JSON.parse(fileContent);
   
       const newCollection = collection.filter((p: any) => p.id !== id);
-      await fs.writeFile(collectionsJsonPath, JSON.stringify(newCollection, null, 2));
+      await fs.writeFile(Constants.collectionsJsonPath, JSON.stringify(newCollection, null, 2));
   
       return res.status(200).json({ success: true });
     } catch (err) {
