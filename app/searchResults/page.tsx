@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import products from './../products/products.json'
 import Link from 'next/link'
 import Slug from '../lib/slugify'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 const SearchResults = () => {
   const searchParams = useSearchParams()
@@ -16,13 +17,7 @@ const SearchResults = () => {
   )
 
   return (<>
-    <div className="breadcrumbs text-sm ps-4">
-      <ul>
-        <li><Link href="/"> Home</Link></li>
-        <li><Link href="/products">Products</Link></li>
-        <li><p>Search results</p></li>
-      </ul>
-    </div>
+    <Breadcrumbs current='Search Results' linkOne='Products' linkOnePath='/products'></Breadcrumbs>
     <div className="p-6">
       <h1 className="text-2xl mb-4">Search Results for "{query}"</h1>
       {filteredProducts.length === 0 && <p>No products found.</p>}

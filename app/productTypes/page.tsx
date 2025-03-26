@@ -3,16 +3,12 @@ import Link from 'next/link'
 import NavCard from '../components/NavCard'
 import types from './types.json'
 import Slug from '../lib/slugify'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 const ProductTypePage = () => {
   return (
     <>
-    <div className="breadcrumbs text-sm ps-4">
-       <ul>
-         <li><Link href="/"> Home</Link></li>
-         <li><p>Product Types</p></li>
-       </ul>
-     </div>
+     <Breadcrumbs current='Product Types'></Breadcrumbs>
      <div className='flex justify-end'>
     <Link className='btn bg-stone-950 text-stone-50 rounded-xl mb-6 me-5' href="/productTypes/new">Add new Product Type</Link>
     </div>

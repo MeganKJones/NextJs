@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useEffect } from 'react'
 import collections from './../../collections/collections.json'
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 interface Props {
   params: {
@@ -109,19 +110,8 @@ interface Props {
 
   return (
     <>
-      <div className="breadcrumbs text-sm ps-4">
-        <ul>
-          <li>
-            <Link href="/"> Home</Link>
-          </li>
-          <li>
-            <Link href="/products">Products</Link>
-          </li>
-          <li>
-            <p>{product.name}</p>
-          </li>
-        </ul>
-      </div>
+
+      <Breadcrumbs current={product.name} linkOne="Products" linkOnePath="/products"></Breadcrumbs>
       <div className="flex items-center justify-center mt-12">
         <div className="card bg-base-100 w-96 shadow-sm" data-theme="dark">
           <figure>

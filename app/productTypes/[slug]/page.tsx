@@ -4,6 +4,7 @@ import products from './../../products/products.json'
 import types from './../types.json'
 import Slug from '@/app/lib/slugify'
 import Link from 'next/link'
+import Breadcrumbs from '@/app/components/Breadcrumbs'
 
 interface Props {
     params: {
@@ -39,13 +40,7 @@ if (res.ok) {
     
 
   return (<>
-   <div className="breadcrumbs text-sm ps-4">
-   <ul>
-     <li><Link href="/"> Home</Link></li>
-     <li><Link href="/productTypes">Product types</Link></li>
-     <li><p>{matchingType?.name}</p></li>
-   </ul>
- </div>
+ <Breadcrumbs current={matchingType?.name} linkOne='Product Types' linkOnePath='/productTypes'></Breadcrumbs>
  <div className='flex justify-end'>
  <button className="btn bg-rose-500 text-stone-950 rounded-xl" onClick={()=>(document.getElementById('deleteModal')as HTMLDialogElement)?.showModal()}>Delete</button>
     <dialog id="deleteModal" className="modal">

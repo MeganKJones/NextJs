@@ -4,6 +4,7 @@ import products from './../../products/products.json'
 import collections from './../collections.json'
 import Slug from '@/app/lib/slugify'
 import Link from 'next/link'
+import Breadcrumbs from '@/app/components/Breadcrumbs'
 
 interface Props {
     params: {
@@ -39,13 +40,7 @@ export const CollectionView = ({params}: Props) => {
     }
 
   return (<>
-   <div className="breadcrumbs text-sm ps-4">
-   <ul>
-     <li><Link href="/"> Home</Link></li>
-     <li><Link href="/collections">Collections</Link></li>
-     <li><p>{matchingCollection?.name ?? Slug.unslugify(slug)}</p></li>
-   </ul>
- </div>
+ <Breadcrumbs linkOne='Collections' linkOnePath='/collections' current={matchingCollection?.name ?? Slug.unslugify(slug)} ></Breadcrumbs>
  <div className='flex justify-end'>
  <button className="btn bg-rose-500 text-stone-950 rounded-xl" onClick={()=>(document.getElementById('deleteModal')as HTMLDialogElement)?.showModal()}>Delete</button>
     <dialog id="deleteModal" className="modal">

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from "./../../new/Page.module.css"
 import collections from '../../collections.json'
 import Slug from '@/app/lib/slugify'
+import Breadcrumbs from '@/app/components/Breadcrumbs'
 
 
 interface Props {
@@ -68,13 +69,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 }
 
   return (<>
-    <div className="breadcrumbs text-sm ps-4">
-      <ul>
-        <li><Link href="/"> Home</Link></li>
-        <li><Link href="/collections">Collections</Link></li>
-        <li><p>Edit {collection?.name ?? Slug.unslugify(slug)}</p></li>
-      </ul>
-    </div>
+    <Breadcrumbs current={`Edit ${collection?.name ?? Slug.unslugify(slug)}`} linkOne='Collections' linkOnePath='/collections'></Breadcrumbs>
     <div className="overflow-x-auto min-h-96 mt-12">
       <h1 className='flex justify-center' >Edit {collection?.name ?? Slug.unslugify(slug)}</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 justify-center items-center mt-12'>

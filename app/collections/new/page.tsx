@@ -2,6 +2,7 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import styles from "./Page.module.css"
+import Breadcrumbs from '@/app/components/Breadcrumbs'
 
 const NewProductPage = () => {
 const [form, setForm] = useState({
@@ -38,13 +39,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 }
 
   return (<>
-    <div className="breadcrumbs text-sm ps-4">
-      <ul>
-        <li><Link href="/"> Home</Link></li>
-        <li><Link href="/collections">Collections</Link></li>
-        <li><p>Add New Collection</p></li>
-      </ul>
-    </div>
+    <Breadcrumbs current="Add New Collection" linkOne='Collections' linkOnePath='/collections' ></Breadcrumbs>
     <div className="overflow-x-auto min-h-96 mt-12">
       <h1 className='flex justify-center' >Add New Collection</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 justify-center items-center mt-12'>
