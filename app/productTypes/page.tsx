@@ -1,15 +1,12 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
 import Link from 'next/link'
 import NavCard from '../components/NavCard'
-import products from './../products/products.json'
 import types from './types.json'
 import Slug from '../lib/slugify'
 
 const ProductTypePage = () => {
   return (
     <>
-    <NavBar></NavBar>
     <div className="breadcrumbs text-sm ps-4">
        <ul>
          <li><Link href="/"> Home</Link></li>

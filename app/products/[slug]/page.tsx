@@ -1,7 +1,6 @@
 "use client";
 import products from "../products.json";
 import { notFound } from "next/navigation";
-import NavBar from "@/app/components/NavBar";
 import Link from "next/link";
 import { useState } from "react";
 import { useEffect } from 'react'
@@ -110,7 +109,6 @@ interface Props {
 
   return (
     <>
-      <NavBar></NavBar>
       <div className="breadcrumbs text-sm ps-4">
         <ul>
           <li>

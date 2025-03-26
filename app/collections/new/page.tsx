@@ -1,6 +1,5 @@
 'use client'
 import React, {useState} from 'react'
-import NavBar from '@/app/components/NavBar'
 import Link from 'next/link'
 import styles from "./Page.module.css"
 
@@ -39,7 +38,6 @@ const handleSubmit = async (e: React.FormEvent) => {
 }
 
   return (<>
-    <NavBar></NavBar>
     <div className="breadcrumbs text-sm ps-4">
       <ul>
         <li><Link href="/"> Home</Link></li>

@@ -3,7 +3,6 @@ import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import products from './../products/products.json'
 import Link from 'next/link'
-import NavBar from '../components/NavBar'
 import Slug from '../lib/slugify'
 
 const SearchResults = () => {
@@ -17,7 +16,6 @@ const SearchResults = () => {
   )
 
   return (<>
-    <NavBar></NavBar>
     <div className="breadcrumbs text-sm ps-4">
       <ul>
         <li><Link href="/"> Home</Link></li>

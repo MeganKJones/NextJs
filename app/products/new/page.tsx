@@ -1,6 +1,5 @@
 'use client'
 import React, {useState} from 'react'
-import NavBar from '@/app/components/NavBar'
 import collections from './../../collections/collections.json'
 import productTypes from './../../productTypes/types.json'
 import Link from 'next/link'
@@ -50,7 +49,6 @@ const handleSubmit = async (e: React.FormEvent) => {
 }
 
   return (<>
-    <NavBar></NavBar>
     <div className="breadcrumbs text-sm ps-4">
       <ul>
         <li><Link href="/"> Home</Link></li>
@@ -61,7 +59,6 @@ const handleSubmit = async (e: React.FormEvent) => {
     <div className="overflow-x-auto min-h-96 mt-12">
       <h1 className='flex justify-center' >Add New Product</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 justify-center items-center min-h-96 mt-12'>
-     
         <label className="input">
           <span className="label">Product Name</span>
           <input type="text" name='name' required onChange={handleChange}/>

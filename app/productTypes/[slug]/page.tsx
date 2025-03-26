@@ -3,7 +3,6 @@ import React from 'react'
 import products from './../../products/products.json'
 import types from './../types.json'
 import Slug from '@/app/lib/slugify'
-import NavBar from '@/app/components/NavBar'
 import Link from 'next/link'
 
 interface Props {
@@ -40,7 +39,6 @@ if (res.ok) {
     
 
   return (<>
-   <NavBar></NavBar>
    <div className="breadcrumbs text-sm ps-4">
    <ul>
      <li><Link href="/"> Home</Link></li>
